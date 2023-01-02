@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Dashboard</h1>
+<p>Games played: {{ games_played }}</p>
+<p>Correct moves: {{ correct_moves }}</p>
+<form method="post">
+    <label for="val1">Value 1:</label><br>
+    <input type="number" id="val1" name="val1"><br>
+    <label for="val2">Value 2:</label><br>
+    <input type="number" id="val2" name="val2"><br>
+    <label for="result">Result:</label><br>
+    <input type="number" id="result" name="result"><br><br>
+    <input type="submit" value="Submit">
+</form>
+<a href="/report">View report</a>
+{% endblock %}

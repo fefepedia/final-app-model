@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Report</h1>
+  {% for game in games %}
+<h2>Game {{ loop.index }}</h2>
+<p>Percentage of correct moves: {{ game['percent_correct'] }}%</p>
+<table>
+    <tr>
+        <th>Operation</th>
+        <th>Count</th>
+    </tr>
+    {% for operation, count in game['analysis'].items() %}
+    <tr>
+        <td>{{ operation }}</td>
+        <td>{{ count }}</td>
+    </tr>
+    {% endfor %}
+</table>
+  {% endfor %}
+{% endblock %}
